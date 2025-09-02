@@ -133,4 +133,5 @@ log/
 
 # Cache de dependências
 .pip-tools/
-.pip-tools.cache
+.pip-tools.cachealembic.ini
+env.py
