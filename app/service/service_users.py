@@ -3,10 +3,11 @@ from app.models.user import User
 from app.db.database import get_db
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
-from sqlalchemy import select
+from sqlalchemy import select, func
 from core.log import log
 from app.schemas.user import UserRequest, UserResponseUser
 from pydantic import BaseModel
+from typing import Dict, Any
 
 
 class UserService:
@@ -35,11 +36,42 @@ class UserService:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Usuario não encontrado!")
         return user
     
-    def get_all(self):
+    def get_all(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         try:
-            results = self.db.scalars(select(User).where())
-            return {'results': results.all()}
-        
+            
+            if page < 1:
+                page = 1
+            if page_size < 1:
+                page_size = 10
+            if page_size > 100:
+                page_size = 100
+
+            
+            query = select(User)
+            offset = (page - 1) * page_size
+            query = query.limit(page_size).offset(offset)
+            results = self.db.scalars(query)
+
+            
+            count_query = select(func.count()).select_from(User)
+            total_count = self.db.scalar(count_query)
+
+            
+            users_data = [
+                UserResponseUser.model_validate({
+                    'id': user.id,
+                    'name': user.name,
+                    'email': user.email,
+                    'age': user.age,
+                    'city': user.city
+                }) 
+                for user in results.all()
+            ]
+
+            return {
+                'data': users_data,
+                'total_count': total_count
+            }        
         except SQLAlchemyError as e:
             log.error(f"Erro ao processar ALL : {str(e)}")
             raise HTTPException(

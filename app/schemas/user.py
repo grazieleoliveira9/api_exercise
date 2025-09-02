@@ -37,6 +37,7 @@ class UserRequest(UserBase):
     city: Optional[str] = None
 
 class UserResponseUser(UserBase):
+    id: int
     name: str
     email: Optional[str] = None
     age: Optional[int] = None

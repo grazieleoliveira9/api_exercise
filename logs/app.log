@@ -13,3 +13,7 @@
 2025-09-02 10:40:27 - core.log - ERROR - Erro ao deletar Users com ID 1: 404: Registro não encontrado
 2025-09-02 10:46:23 - core.log - INFO - Users com ID 2 deletado com sucesso.
 2025-09-02 11:07:16 - core.log - INFO - Usuário teste2 criado com sucesso
+2025-09-02 13:59:35 - core.log - INFO - Usuário julia criado com sucesso
+2025-09-02 14:00:04 - core.log - INFO - Usuário joao criado com sucesso
+2025-09-02 14:00:36 - core.log - INFO - Usuário maria criado com sucesso
+2025-09-02 14:00:57 - core.log - INFO - Usuário monica criado com sucesso

@@ -1,10 +1,13 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status,Query
 from sqlalchemy.orm import Session
 from app.db.database import get_db
 from app.service.service_users import UserService
 from app.models.user import User
 from app.schemas.user import UserCreate, UserUpdate, UserResponse, UserBase, UserResponseUser, UserRequest
 from core.log import log
+from core.tools import paginator
+from app.models.pagination import Pagination
+
 
 router = APIRouter(
     prefix="/users",
@@ -49,12 +52,23 @@ def get_user_by_id(user_id: int, db: Session = Depends(get_db)):
     return user
 
 
-@router.get("/api/v1")
-def get_all(db: Session = Depends(get_db)):
+@router.get("/api/v1", response_model=Pagination[UserResponse])
+def get_all(
+    db: Session = Depends(get_db), 
+    page: int = Query(1, ge=1, description="Número da página (começa em 1)"),
+    page_size: int = Query(10, ge=1, le=100, description="Itens por página (1-100)")
+):
     user_service = UserService(db)
-    results = user_service.get_all()
+    results = user_service.get_all(page=page, page_size=page_size)
 
-    return results
+    pagination = paginator(
+        items=results["data"],
+        page=page,
+        page_size=page_size,
+        total=results["total_count"]
+    )
+
+    return pagination
 
 
 @router.patch("/api/v1{user_id}", response_model= UserResponseUser, status_code=status.HTTP_200_OK )
