@@ -1,0 +1,36 @@
+root - DEBUG - This is a debug message
+root - INFO - This is an info message
+root - WARNING - This is a warning message
+root - ERROR - This is an error message
+root - CRITICAL - This is a critical message
+__main__ - INFO - Usuário 123 realizou login
+root - DEBUG - This is a debug message
+root - INFO - This is an info message
+root - WARNING - This is a warning message
+root - ERROR - This is an error message
+root - CRITICAL - This is a critical message
+__main__ - INFO - Usuário 123 realizou login
+root - DEBUG - This is a debug message
+root - INFO - This is an info message
+root - WARNING - This is a warning message
+root - ERROR - This is an error message
+root - CRITICAL - This is a critical message
+__main__ - INFO - Usuário 123 realizou login
+2025-09-01 13:28:22,155 - root - DEBUG - This is a debug message
+2025-09-01 13:28:22,155 - root - INFO - This is an info message
+2025-09-01 13:28:22,155 - root - WARNING - This is a warning message
+2025-09-01 13:28:22,155 - root - ERROR - This is an error message
+2025-09-01 13:28:22,155 - root - CRITICAL - This is a critical message
+2025-09-01 13:28:22,155 - __main__ - INFO - Usuário 123 realizou login
+2025-09-01 13:28:32,645 - root - DEBUG - This is a debug message
+2025-09-01 13:28:32,645 - root - INFO - This is an info message
+2025-09-01 13:28:32,645 - root - WARNING - This is a warning message
+2025-09-01 13:28:32,645 - root - ERROR - This is an error message
+2025-09-01 13:28:32,645 - root - CRITICAL - This is a critical message
+2025-09-01 13:28:32,645 - __main__ - INFO - Usuário 123 realizou login
+2025-09-01 13:28:35,374 - root - DEBUG - This is a debug message
+2025-09-01 13:28:35,374 - root - INFO - This is an info message
+2025-09-01 13:28:35,374 - root - WARNING - This is a warning message
+2025-09-01 13:28:35,374 - root - ERROR - This is an error message
+2025-09-01 13:28:35,374 - root - CRITICAL - This is a critical message
+2025-09-01 13:28:35,374 - __main__ - INFO - Usuário 123 realizou login

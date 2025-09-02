@@ -1,0 +1,14 @@
+2025-09-01 15:43:15 - core.log - INFO - Usuário teste criado com sucesso
+2025-09-01 15:52:05 - core.log - INFO - Usuário graziele criado com sucesso
+2025-09-02 08:43:17 - core.log - INFO - ID 1 encontrado para atualização.
+2025-09-02 08:43:17 - core.log - ERROR - Erro ao atualizar Users com ID 1: 'UserService' object has no attribute '_UserService__logger'
+2025-09-02 08:46:14 - core.log - INFO - ID 1 encontrado para atualização.
+2025-09-02 08:46:14 - core.log - INFO - Users com ID 1 atualizado com sucesso.
+2025-09-02 08:46:14 - core.log - INFO - Atualização realizada com sucesso para o ID: 1
+2025-09-02 09:44:50 - core.log - INFO - Usuário teste02 criado com sucesso
+2025-09-02 10:23:28 - core.log - ERROR - Erro ao deletar Users com ID 4: 404: ID não encontrado
+2025-09-02 10:23:48 - core.log - ERROR - Erro ao deletar Users com ID 1: 404: ID não encontrado
+2025-09-02 10:31:02 - core.log - ERROR - Erro ao deletar Users com ID 4: 404: Registro não encontrado
+2025-09-02 10:39:01 - core.log - ERROR - Erro ao deletar Users com ID 1: 404: Registro não encontrado
+2025-09-02 10:40:27 - core.log - ERROR - Erro ao deletar Users com ID 1: 404: Registro não encontrado
+2025-09-02 10:46:23 - core.log - INFO - Users com ID 2 deletado com sucesso.
