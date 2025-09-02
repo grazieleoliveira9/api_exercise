@@ -1,12 +1,136 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
+# Arquivo .gitignore para projeto Python com Alembic e dados sensíveis
+
+# ==================== DADOS SENSÍVEIS ====================
+
+# Variáveis de ambiente
 .env
-*.sqlite
+.env.*
+!.env.example
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Arquivos de configuração sensíveis
+config.ini
+config.yaml
+config.yml
+config.json
+config.local.*
+secrets.ini
+secrets.yaml
+secrets.yml
+secrets.json
+
+# Chaves e certificados
+*.key
+*.pem
+*.crt
+*.cert
+*.pfx
+*.p12
+*.der
+
+# Credenciais de banco de dados
 *.db
+*.sqlite
+*.sqlite3
+database.url
+connection.string
+
+# ==================== ALEMBIC ====================
+
+# Versões do Alembic (não versionar as migrations geradas)
+/alembic/versions/*
+!/alembic/versions/README.md
+
+# Arquivo de configuração do Alembic (pode conter credenciais)
+/alembic.ini
+
+# Logs do Alembic
+/alembic/logs/*
+alembic.log
+
+# ==================== PYTHON ====================
+
+# Bytecode compilado
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuições Python
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Instalações pip
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Pytest
+.pytest_cache/
+.mypy_cache/
+.python-version
+
+# ==================== SISTEMA ====================
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# Arquivos do sistema
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==================== LOGS ====================
+
+# Logs de aplicação
+*.log
+logs/
+log/
+
+# ==================== CACHE ====================
+
+# Cache do Python
+.python-version
+
+# Cache de dependências
+.pip-tools/
+.pip-tools.cache
