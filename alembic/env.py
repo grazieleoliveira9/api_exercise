@@ -40,7 +40,9 @@ def run_migrations_offline() -> None:
     script output.
 
     """
-    url = 'postgresql://api_user:35214225@localhost:5432/users'
+    import os
+    
+    url = os.getenv('DATABASE_URL')
     context.configure(
         url=url,
         target_metadata=target_metadata,
