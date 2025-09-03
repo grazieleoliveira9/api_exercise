@@ -8,7 +8,7 @@ from core.log import log
 from app.schemas.user import UserRequest, UserResponseUser
 from pydantic import BaseModel
 from typing import Dict, Any
-
+from datetime import datetime
 
 class UserService:
     def __init__(self, db: Session):
@@ -100,6 +100,9 @@ class UserService:
                 existing_user.age = user.age
             if user.city is not None:
                 existing_user.city = user.city
+            if user.updated_at is not None:
+                existing_user.updated_at = datetime.now()
+
             self.db.commit()
             self.db.refresh(existing_user)
             log.info(f"Users com ID {user_id} atualizado com sucesso.")

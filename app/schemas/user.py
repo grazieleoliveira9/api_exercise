@@ -13,18 +13,20 @@ class UserBase(BaseModel):
     class Config:
         from_attributes = True
 
-class UserCreate(UserBase):
+class UserCreate(BaseModel):
     name: str
     email: str
     age: int
     city: str
+    created_at: Optional[datetime] = datetime.now()
+
 
 class UserUpdate(UserBase):
     name: Optional[str] = None
     email: Optional[str] = None
     age: Optional[int] = None
     city: Optional[str] = None
-    created_at: Optional[datetime] = datetime.now()
+    updated_at: Optional[datetime] = None
 
 
 class UserResponse(UserBase):
@@ -42,5 +44,7 @@ class UserResponseUser(UserBase):
     email: Optional[str] = None
     age: Optional[int] = None
     city: Optional[str] = None
+    updated_at: Optional[datetime] = None
+
 
 

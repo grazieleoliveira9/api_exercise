@@ -27,13 +27,15 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
         name=user.name,
         email=user.email,
         age=user.age,
-        city=user.city
+        city=user.city,
+        create_at=user.create_at
     )
     data = user_service.insert_user(
         name=new_user.name,
         email=new_user.email,
         age=new_user.age,
-        city=new_user.city
+        city=new_user.city,
+        create_at=user.create_at
     )
     if not data:
         log.error("Erro ao criar usuário")
